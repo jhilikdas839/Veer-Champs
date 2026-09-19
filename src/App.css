@@ -1,0 +1,7183 @@
+/* =========================================================
+   GAME VIEWPORT
+========================================================= */
+
+.game-wrapper {
+  width: 100vw;
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #020a2c;
+}
+
+
+/* =========================================================
+   MOBILE GAME SCREEN
+========================================================= */
+
+.game-screen {
+  position: relative;
+
+  width: 100vw;
+  height: 100dvh;
+
+  max-width: 618px;
+  max-height: 926px;
+
+  overflow: hidden;
+
+  background: #020a2c;
+}
+
+
+/* =========================================================
+   DESKTOP UNAVAILABLE
+========================================================= */
+
+.desktop-unavailable {
+  display: none;
+
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  padding: 30px;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #0c3470 0%,
+      #061d4b 45%,
+      #020a2c 100%
+    );
+}
+
+
+/* Icon */
+
+.unavailable-icon {
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 25px;
+
+  border: 1px solid #1764c9;
+
+  border-radius: 24px;
+
+  background: rgba(7, 39, 92, 0.8);
+
+  box-shadow:
+    0 0 30px rgba(0, 120, 255, 0.25);
+
+  font-size: 45px;
+}
+
+
+/* Heading */
+
+.desktop-unavailable h1 {
+  margin: 0;
+
+  font-size: 38px;
+
+  font-weight: 800;
+}
+
+
+/* Description */
+
+.desktop-unavailable p {
+  margin: 12px 0 0;
+
+  color: #aebbd9;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+
+/* Small text */
+
+.desktop-unavailable span {
+  margin-top: 18px;
+
+  color: #16b4ff;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   DESKTOP / LAPTOP
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .game-screen {
+    display: none;
+  }
+
+  .desktop-unavailable {
+    display: flex;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .game-screen {
+    width: 100vw;
+    height: 100dvh;
+
+    max-width: none;
+    max-height: none;
+  }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   RESET / GAME WRAPPER
+========================================================= */
+
+.game-wrapper {
+  width: 100vw;
+  height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #020a2c;
+
+  overflow: hidden;
+}
+
+.game-screen {
+  position: relative;
+
+  width: 100vw;
+  height: 100dvh;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SPLASH SCREEN
+========================================================= */
+
+.splash-screen {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 35%,
+      #123d91 0%,
+      #09255f 30%,
+      #03153f 65%,
+      #020925 100%
+    );
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(80px);
+}
+
+.glow-blue {
+  width: 55vw;
+  height: 45vh;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(0, 75, 255, 0.28);
+}
+
+.glow-gold {
+  width: 40vw;
+  height: 30vh;
+
+  top: 38%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(255, 180, 0, 0.18);
+}
+
+
+/* =========================================================
+   FLOATING DICE
+========================================================= */
+
+.floating-dice {
+  position: absolute;
+
+  color: #2361bb;
+
+  opacity: 0.16;
+
+  font-size: clamp(35px, 4vw, 70px);
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.dice-one {
+  top: 4%;
+  left: 2%;
+
+  transform: rotate(-25deg);
+}
+
+.dice-two {
+  top: 8%;
+  right: 3%;
+
+  transform: rotate(25deg);
+}
+
+.dice-three {
+  bottom: 5%;
+  left: 3%;
+
+  transform: rotate(20deg);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-container {
+  position: absolute;
+
+  top: 4vh;
+  left: 50%;
+
+  width: min(520px, 42vw);
+
+  transform: translateX(-50%);
+
+  z-index: 10;
+}
+
+.ludo-logo {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   HERO
+   Hero.png = Board + Pawns + Dice
+========================================================= */
+
+.hero-container {
+  position: absolute;
+
+  top: 31vh;
+  left: 50%;
+
+  width: min(650px, 46vw);
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(0 18px 20px rgba(0, 0, 0, .55));
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+  position: absolute;
+
+  left: 50%;
+  bottom: 11vh;
+
+  transform: translateX(-50%);
+
+  width: min(560px, 31vw);
+  height: 82px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #062d78 0%,
+      #03143f 100%
+    );
+
+  border: 2px solid #1555cf;
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, .55),
+    inset 0 1px 0 rgba(255,255,255,.14);
+
+  z-index: 20;
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.feature {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: white;
+
+  border-right: 1px solid rgba(100,145,240,.35);
+
+  font-size: 12px;
+
+  line-height: 1.15;
+}
+
+.feature:last-child {
+  border-right: none;
+}
+
+.feature-icon {
+  margin-bottom: 4px;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  text-shadow:
+    0 0 10px currentColor;
+}
+
+.play-icon {
+  color: #00d9ff;
+}
+
+.friends-icon {
+  color: #00c8ff;
+}
+
+.win-icon {
+  color: #ffd329;
+}
+
+.safe-icon {
+  color: #00f4d4;
+}
+
+.feature strong {
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.feature span {
+  margin-top: 2px;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   GET STARTED BUTTON
+========================================================= */
+
+.get-started-btn {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2.5vh;
+
+  transform: translateX(-50%);
+
+  width: min(500px, 28vw);
+  height: 62px;
+
+  border: 2px solid #ffe36a;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffe64e 0%,
+      #ffc51a 50%,
+      #ffad00 100%
+    );
+
+  color: #061743;
+
+  font-size: 24px;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 0 #c47700,
+    0 10px 28px rgba(255,185,0,.5),
+    inset 0 3px 5px rgba(255,255,255,.9);
+
+  z-index: 30;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease;
+}
+
+.get-started-btn:hover {
+  transform:
+    translateX(-50%)
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 0 #c47700,
+    0 14px 32px rgba(255,185,0,.6),
+    inset 0 3px 5px rgba(255,255,255,.9);
+}
+
+.get-started-btn:active {
+  transform:
+    translateX(-50%)
+    translateY(3px);
+
+  box-shadow:
+    0 2px 0 #c47700,
+    0 5px 12px rgba(255,185,0,.4);
+}
+
+.get-started-btn strong {
+  position: absolute;
+
+  right: 30px;
+
+  font-size: 32px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   BOTTOM CAPTION
+========================================================= */
+
+.bottom-caption {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0.7vh;
+
+  transform: translateX(-50%);
+
+  width: min(520px, 30vw);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #edf3ff;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  z-index: 30;
+}
+
+.bottom-caption span {
+  width: 65px;
+  height: 1px;
+
+  background: #ffd329;
+
+  box-shadow:
+    0 0 7px #ffd329;
+}
+
+.bottom-caption p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   DESKTOP — WIDE SCREEN
+========================================================= */
+
+@media (min-width: 1000px) {
+
+  .logo-container {
+    top: 2vh;
+
+    width: min(520px, 30vw);
+  }
+
+  .hero-container {
+    top: 28vh;
+
+    width: min(680px, 40vw);
+  }
+
+  .features {
+    bottom: 11vh;
+
+    width: min(560px, 30vw);
+
+    height: 78px;
+  }
+
+  .get-started-btn {
+    bottom: 2.5vh;
+
+    width: min(500px, 27vw);
+
+    height: 62px;
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP / MEDIUM DESKTOP
+========================================================= */
+
+@media (min-width: 601px) and (max-width: 1200px) {
+
+  .logo-container {
+    top: 2vh;
+
+    width: 38vw;
+  }
+
+  .hero-container {
+    top: 28vh;
+
+    width: 48vw;
+  }
+
+  .features {
+    width: 42vw;
+
+    height: 75px;
+  }
+
+  .get-started-btn {
+    width: 38vw;
+
+    height: 58px;
+
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .game-screen {
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  /* Logo */
+
+  .logo-container {
+    top: 4.5%;
+
+    width: 84%;
+  }
+
+
+  /* Hero */
+
+  .hero-container {
+    top: 28%;
+
+    width: 98%;
+  }
+
+
+  /* Features */
+
+  .features {
+    bottom: 22.5%;
+
+    width: 92%;
+
+    height: 10%;
+  }
+
+  .feature {
+    font-size: 8px;
+  }
+
+  .feature-icon {
+    font-size: 21px;
+  }
+
+  .feature strong {
+    font-size: 8px;
+  }
+
+  .feature span {
+    font-size: 7px;
+  }
+
+
+  /* Button */
+
+  .get-started-btn {
+    bottom: 8.5%;
+
+    width: 82%;
+
+    height: 7.5%;
+
+    font-size: 17px;
+  }
+
+  .get-started-btn strong {
+    right: 7%;
+
+    font-size: 24px;
+  }
+
+
+  /* Caption */
+
+  .bottom-caption {
+    bottom: 3.5%;
+
+    width: 86%;
+
+    font-size: 8px;
+
+    gap: 8px;
+  }
+
+  .bottom-caption span {
+    width: 11%;
+  }
+
+
+  /* Dice */
+
+  .floating-dice {
+    font-size: 38px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .logo-container {
+    width: 86%;
+  }
+
+  .hero-container {
+    top: 29%;
+
+    width: 100%;
+  }
+
+  .features {
+    height: 10.5%;
+  }
+
+  .feature {
+    font-size: 7px;
+  }
+
+  .feature-icon {
+    font-size: 18px;
+  }
+
+  .feature strong {
+    font-size: 7px;
+  }
+
+  .feature span {
+    font-size: 6px;
+  }
+
+  .get-started-btn {
+    height: 7.2%;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT DESKTOP SCREEN
+========================================================= */
+
+@media (min-width: 601px) and (max-height: 700px) {
+
+  .logo-container {
+    top: 1vh;
+
+    width: min(450px, 28vw);
+  }
+
+  .hero-container {
+    top: 25vh;
+
+    width: min(600px, 38vw);
+  }
+
+  .features {
+    bottom: 10vh;
+
+    height: 68px;
+  }
+
+  .get-started-btn {
+    height: 52px;
+
+    bottom: 2vh;
+
+    font-size: 20px;
+  }
+
+  .bottom-caption {
+    font-size: 9px;
+  }
+}
+
+
+
+
+
+
+/* =========================================================
+   AUTHENTICATION PAGE
+========================================================= */
+
+.auth-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      #102f72 0%,
+      #071c4a 35%,
+      #030f30 70%,
+      #010720 100%
+    );
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.auth-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(70px);
+
+  z-index: 1;
+}
+
+.auth-glow-blue {
+  width: 55%;
+  height: 45%;
+
+  top: -10%;
+  left: 20%;
+
+  background: rgba(0, 91, 255, 0.20);
+}
+
+.auth-glow-purple {
+  width: 45%;
+  height: 35%;
+
+  top: 20%;
+  right: -15%;
+
+  background: rgba(55, 55, 170, 0.15);
+}
+
+
+/* =========================================================
+   FLOATING DICE
+========================================================= */
+
+.auth-floating-dice {
+  position: absolute;
+
+  color: #2764bd;
+
+  opacity: 0.16;
+
+  font-size: clamp(40px, 6vw, 75px);
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.auth-dice-one {
+  top: -2%;
+  left: -2%;
+
+  transform: rotate(-25deg);
+}
+
+.auth-dice-two {
+  top: 28%;
+  right: -3%;
+
+  transform: rotate(25deg);
+}
+
+.auth-dice-three {
+  bottom: 8%;
+  left: -3%;
+
+  transform: rotate(-20deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.auth-header {
+  position: absolute;
+
+  top: 5%;
+  left: 50%;
+
+  width: min(650px, 88%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+
+  z-index: 20;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(54, 99, 211, 0.65);
+
+  border-radius: 50%;
+
+  background: rgba(4, 19, 57, 0.75);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 5px 15px rgba(0,0,0,.25);
+}
+
+.back-button span {
+  font-size: 34px;
+  font-weight: 300;
+
+  line-height: 1;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.auth-progress {
+  position: absolute;
+
+  top: 5px;
+  left: 50%;
+
+  width: 390px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.progress-step {
+  width: 62px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #697797;
+
+  font-size: 13px;
+}
+
+.progress-step.active {
+  color: #ffffff;
+}
+
+.progress-dot {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: #454f70;
+}
+
+.progress-step.active .progress-dot {
+  background: #12aaff;
+
+  box-shadow:
+    0 0 7px #12aaff,
+    0 0 15px rgba(18,170,255,.6);
+}
+
+.progress-line {
+  width: 62px;
+  height: 3px;
+
+  margin-top: 5px;
+
+  border-radius: 10px;
+
+  background: #424c6d;
+}
+
+.active-line {
+  background: #159dff;
+
+  box-shadow:
+    0 0 7px rgba(21,157,255,.7);
+}
+
+
+/* =========================================================
+   HELP BUTTON
+========================================================= */
+
+.help-button {
+  margin-left: auto;
+
+  padding-top: 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #24aaff;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.auth-content {
+  position: absolute;
+
+  top: 18%;
+
+  left: 50%;
+
+  width: min(650px, 82%);
+
+  transform: translateX(-50%);
+
+  z-index: 15;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.auth-heading h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(40px, 4.2vw, 58px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+.auth-heading h1 span {
+  color: #1da9ff;
+
+  text-shadow:
+    0 0 12px rgba(29,169,255,.2);
+}
+
+.auth-heading p {
+  margin: 14px 0 0;
+
+  color: #9caacd;
+
+  font-size: clamp(18px, 2vw, 23px);
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   MOBILE NUMBER INPUT
+========================================================= */
+
+.mobile-input-section {
+  margin-top: 27px;
+}
+
+.mobile-input-section label {
+  position: relative;
+
+  display: block;
+
+  width: max-content;
+
+  margin-left: 20px;
+  margin-bottom: -1px;
+
+  padding: 0 6px;
+
+  color: #a0afd2;
+
+  background: #071c49;
+
+  font-size: 14px;
+
+  z-index: 2;
+}
+
+.mobile-input-box {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  border: 2px solid #294a9b;
+
+  border-radius: 18px;
+
+  background: rgba(5, 21, 57, .75);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,.03);
+}
+
+
+/* Country */
+
+.country-selector {
+  width: 82px;
+  height: 100%;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.india-flag {
+  font-size: 23px;
+}
+
+.country-arrow {
+  color: #8797be;
+
+  font-size: 18px;
+}
+
+
+/* +91 */
+
+.country-code {
+  padding: 0 17px;
+
+  color: #f2f5ff;
+
+  font-size: 19px;
+
+  font-weight: 600;
+}
+
+
+/* Divider */
+
+.input-divider {
+  width: 1px;
+  height: 36px;
+
+  background: #354b83;
+}
+
+
+/* Input */
+
+.mobile-input-box input {
+  min-width: 0;
+
+  flex: 1;
+
+  height: 100%;
+
+  padding: 0 18px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 18px;
+}
+
+.mobile-input-box input::placeholder {
+  color: #727f9f;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+.continue-button {
+  position: relative;
+
+  width: 100%;
+  height: 68px;
+
+  margin-top: 17px;
+
+  border: 2px solid #ffe477;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffdb62 0%,
+      #ffc333 50%,
+      #ffae19 100%
+    );
+
+  color: #06163c;
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #bd7100,
+    0 9px 25px rgba(255,183,25,.4),
+    inset 0 3px 5px rgba(255,255,255,.85);
+
+  transition: .18s ease;
+}
+
+.continue-button:hover {
+  transform: translateY(-2px);
+}
+
+.continue-button:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 2px 0 #bd7100,
+    0 5px 12px rgba(255,183,25,.3);
+}
+
+.continue-button strong {
+  position: absolute;
+
+  right: 27px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 32px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   OTP MESSAGE
+========================================================= */
+
+.otp-message {
+  margin-top: 16px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  color: #9da9c8;
+
+  font-size: 14px;
+}
+
+.lock-icon {
+  color: #c5cee2;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.auth-benefits {
+  width: 100%;
+
+  margin-top: 29px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.benefit {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.benefit:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 8px;
+
+  width: 1px;
+  height: 55px;
+
+  background: #193368;
+}
+
+.benefit-icon {
+  width: 51px;
+  height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #163a83;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #09245d,
+      #071641
+    );
+
+  font-size: 27px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 5px 12px rgba(0,0,0,.2);
+}
+
+.shield-icon {
+  color: #149eff;
+
+  text-shadow:
+    0 0 10px #149eff;
+}
+
+.lightning-icon {
+  color: #20e0dd;
+
+  text-shadow:
+    0 0 10px #20e0dd;
+}
+
+.players-icon {
+  color: #974dff;
+
+  text-shadow:
+    0 0 10px #974dff;
+}
+
+.benefit p {
+  margin: 8px 0 0;
+
+  color: #e8edfb;
+
+  font-size: 13px;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.auth-hero {
+  position: absolute;
+
+  left: 50%;
+  bottom: -2%;
+
+  width: min(760px, 78%);
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+.hero-light {
+  position: absolute;
+
+  top: 30%;
+  left: 50%;
+
+  width: 60%;
+  height: 60%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255,180,30,.22);
+
+  filter: blur(65px);
+
+  z-index: -1;
+}
+
+.auth-hero-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(0 -8px 20px rgba(0,0,0,.4));
+}
+
+
+/* =========================================================
+   BOTTOM BRANDING
+========================================================= */
+
+.auth-bottom-brand {
+  position: absolute;
+
+  left: 50%;
+  bottom: 12px;
+
+  width: min(500px, 70%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  color: #8e9abd;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  z-index: 20;
+}
+
+.auth-bottom-brand span {
+  width: 55px;
+  height: 1px;
+
+  background: #526184;
+}
+
+.auth-bottom-brand p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .auth-header {
+    top: 3%;
+
+    width: 90%;
+  }
+
+
+  /* Back */
+
+  .back-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .back-button span {
+    font-size: 30px;
+  }
+
+
+  /* Progress */
+
+  .auth-progress {
+    top: 3px;
+
+    width: 220px;
+  }
+
+  .progress-step {
+    width: 42px;
+
+    font-size: 10px;
+
+    gap: 7px;
+  }
+
+  .progress-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .progress-line {
+    width: 36px;
+
+    height: 2px;
+
+    margin-top: 5px;
+  }
+
+
+  /* Help */
+
+  .help-button {
+    padding-top: 12px;
+
+    font-size: 11px;
+  }
+
+
+  /* Main */
+
+  .auth-content {
+    top: 17%;
+
+    width: 81%;
+  }
+
+
+  /* Heading */
+
+  .auth-heading h1 {
+    font-size: clamp(36px, 10vw, 52px);
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+  }
+
+  .auth-heading p {
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    line-height: 1.35;
+  }
+
+
+  /* Input */
+
+  .mobile-input-section {
+    margin-top: 24px;
+  }
+
+  .mobile-input-section label {
+    margin-left: 14px;
+
+    font-size: 13px;
+  }
+
+  .mobile-input-box {
+    height: 78px;
+
+    border-radius: 17px;
+  }
+
+  .country-selector {
+    width: 62px;
+  }
+
+  .india-flag {
+    font-size: 21px;
+  }
+
+  .country-code {
+    padding: 0 11px;
+
+    font-size: 17px;
+  }
+
+  .mobile-input-box input {
+    padding: 0 11px;
+
+    font-size: 15px;
+  }
+
+
+  /* Continue */
+
+  .continue-button {
+    height: 59px;
+
+    margin-top: 16px;
+
+    border-radius: 17px;
+
+    font-size: 19px;
+  }
+
+  .continue-button strong {
+    right: 21px;
+
+    font-size: 28px;
+  }
+
+
+  /* OTP */
+
+  .otp-message {
+    margin-top: 13px;
+
+    font-size: 11px;
+  }
+
+
+  /* Benefits */
+
+  .auth-benefits {
+    margin-top: 25px;
+  }
+
+  .benefit-icon {
+    width: 47px;
+    height: 47px;
+
+    font-size: 24px;
+  }
+
+  .benefit p {
+    font-size: 11px;
+  }
+
+
+  /* Hero */
+
+  .auth-hero {
+    width: 125%;
+
+    bottom: 0;
+  }
+
+
+  /* Bottom */
+
+  .auth-bottom-brand {
+    bottom: 10px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    gap: 8px;
+  }
+
+  .auth-bottom-brand span {
+    width: 35px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .auth-progress {
+    width: 205px;
+  }
+
+  .progress-step {
+    width: 38px;
+
+    font-size: 9px;
+  }
+
+  .progress-line {
+    width: 31px;
+  }
+
+  .auth-content {
+    top: 16.5%;
+
+    width: 82%;
+  }
+
+  .auth-heading h1 {
+    font-size: 35px;
+  }
+
+  .auth-heading p {
+    font-size: 16px;
+  }
+
+  .mobile-input-box {
+    height: 72px;
+  }
+
+  .continue-button {
+    height: 56px;
+
+    font-size: 18px;
+  }
+
+  .auth-benefits {
+    margin-top: 22px;
+  }
+
+  .benefit-icon {
+    width: 44px;
+    height: 44px;
+
+    font-size: 22px;
+  }
+
+  .benefit p {
+    font-size: 10px;
+  }
+
+  .auth-hero {
+    width: 130%;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 601px) {
+
+  .auth-content {
+    max-width: 650px;
+  }
+
+  .auth-hero {
+    width: min(760px, 62vw);
+
+    bottom: -4%;
+  }
+
+}
+
+
+/* =========================================================
+   SHORT DESKTOP
+========================================================= */
+
+@media (min-width: 601px) and (max-height: 750px) {
+
+  .auth-header {
+    top: 3%;
+  }
+
+  .auth-content {
+    top: 14.5%;
+
+    transform:
+      translateX(-50%)
+      scale(.86);
+
+    transform-origin: top center;
+  }
+
+  .auth-hero {
+    width: min(650px, 55vw);
+
+    bottom: -8%;
+  }
+
+  .auth-bottom-brand {
+    bottom: 7px;
+  }
+
+}
+
+
+
+
+
+/* =========================================================
+   OTP SCREEN
+========================================================= */
+
+.otp-page {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      #123879 0%,
+      #081f50 35%,
+      #031437 70%,
+      #010720 100%
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.otp-glow {
+  position: absolute;
+
+  width: 60%;
+  height: 45%;
+
+  top: -10%;
+  left: 20%;
+
+  border-radius: 50%;
+
+  background: rgba(0, 100, 255, 0.18);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FLOATING DICE
+========================================================= */
+
+.otp-floating-dice {
+  position: absolute;
+
+  color: #2461bb;
+
+  opacity: 0.16;
+
+  font-size: clamp(45px, 6vw, 80px);
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.otp-dice-one {
+  top: 8%;
+  left: -2%;
+
+  transform: rotate(-25deg);
+}
+
+.otp-dice-two {
+  top: 28%;
+  right: -3%;
+
+  transform: rotate(25deg);
+}
+
+.otp-dice-three {
+  bottom: 12%;
+  right: -3%;
+
+  transform: rotate(20deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.otp-header {
+  position: absolute;
+
+  top: 4%;
+
+  left: 50%;
+
+  width: min(650px, 90%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: flex-start;
+
+  z-index: 30;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.otp-back-button {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(61, 106, 220, 0.65);
+
+  border-radius: 50%;
+
+  background: rgba(4, 19, 57, 0.75);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 5px 15px rgba(0,0,0,0.25);
+}
+
+.otp-back-button span {
+  font-size: 34px;
+
+  line-height: 1;
+
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.otp-progress {
+  position: absolute;
+
+  top: 5px;
+
+  left: 50%;
+
+  width: 390px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: center;
+}
+
+.otp-progress-step {
+  width: 62px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #6e7a9b;
+
+  font-size: 13px;
+}
+
+.otp-progress-step.active,
+.otp-progress-step.completed {
+  color: #ffffff;
+}
+
+.otp-progress-dot {
+  width: 14px;
+  height: 14px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #46516f;
+
+  color: transparent;
+
+  font-size: 9px;
+}
+
+.otp-progress-step.completed .otp-progress-dot,
+.otp-progress-step.active .otp-progress-dot {
+  background: #15a9ff;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 8px #15a9ff,
+    0 0 18px rgba(21,169,255,0.55);
+}
+
+.otp-progress-line {
+  width: 62px;
+  height: 3px;
+
+  margin-top: 5px;
+
+  border-radius: 20px;
+
+  background: #424d6d;
+}
+
+.otp-progress-line.active {
+  background: #15a9ff;
+
+  box-shadow:
+    0 0 8px rgba(21,169,255,0.7);
+}
+
+
+/* =========================================================
+   HELP
+========================================================= */
+
+.otp-help-button {
+  margin-left: auto;
+
+  padding-top: 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #20aaff;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.otp-content {
+  position: absolute;
+
+  top: 10%;
+
+  left: 50%;
+
+  width: min(650px, 90%);
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  z-index: 20;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.otp-logo-container {
+  width: 180px;
+
+  margin: 0 auto;
+}
+
+.otp-logo {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   OTP HEADING
+========================================================= */
+
+.otp-heading {
+  margin-top: 7px;
+}
+
+.otp-heading h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.otp-heading h1 span {
+  color: #22aaff;
+}
+
+.otp-heading p {
+  margin: 12px 0 0;
+
+  color: #b0bad4;
+
+  font-size: 18px;
+}
+
+.otp-heading strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #e9edfa;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   OTP INPUTS
+========================================================= */
+
+.otp-inputs {
+  margin-top: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.otp-input {
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
+
+  border: 2px solid #294b99;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background:
+    rgba(5, 22, 60, 0.85);
+
+  color: #ffffff;
+
+  text-align: center;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  caret-color: #16aaff;
+
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.otp-input:focus {
+  border-color: #16aaff;
+
+  box-shadow:
+    0 0 12px rgba(22,170,255,0.35);
+}
+
+
+/* =========================================================
+   VERIFY BUTTON
+========================================================= */
+
+.verify-button {
+  position: relative;
+
+  width: min(510px, 100%);
+
+  height: 62px;
+
+  margin: 22px auto 0;
+
+  border: 2px solid #ffe477;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffdc63 0%,
+      #ffc12e 55%,
+      #ffac19 100%
+    );
+
+  color: #07163d;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #bd7100,
+    0 9px 25px rgba(255,183,25,0.4),
+    inset 0 3px 5px rgba(255,255,255,0.85);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.verify-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 0 #bd7100,
+    0 13px 30px rgba(255,183,25,0.48),
+    inset 0 3px 5px rgba(255,255,255,0.85);
+}
+
+.verify-button:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 2px 0 #bd7100,
+    0 5px 12px rgba(255,183,25,0.3);
+}
+
+.verify-button strong {
+  position: absolute;
+
+  right: 27px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 31px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   RESEND
+========================================================= */
+
+.resend-section {
+  margin-top: 17px;
+}
+
+.resend-section p {
+  margin: 0;
+
+  color: #a7b1c9;
+
+  font-size: 15px;
+}
+
+.resend-button {
+  margin-top: 5px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #12b5ff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.otp-hero {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -4%;
+
+  width: min(760px, 85%);
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+.otp-hero-glow {
+  position: absolute;
+
+  top: 32%;
+
+  left: 50%;
+
+  width: 60%;
+  height: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255,180,25,0.24);
+
+  filter: blur(60px);
+
+  z-index: -1;
+}
+
+.otp-hero-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(0 -10px 20px rgba(0,0,0,0.4));
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .otp-header {
+    top: 3%;
+
+    width: 90%;
+  }
+
+
+  /* Back */
+
+  .otp-back-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .otp-back-button span {
+    font-size: 30px;
+  }
+
+
+  /* Progress */
+
+  .otp-progress {
+    top: 3px;
+
+    width: 220px;
+  }
+
+  .otp-progress-step {
+    width: 42px;
+
+    font-size: 10px;
+
+    gap: 6px;
+  }
+
+  .otp-progress-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .otp-progress-line {
+    width: 36px;
+
+    height: 2px;
+
+    margin-top: 5px;
+  }
+
+
+  /* Help */
+
+  .otp-help-button {
+    padding-top: 12px;
+
+    font-size: 11px;
+  }
+
+
+  /* Content */
+
+  .otp-content {
+    top: 10%;
+
+    width: 90%;
+  }
+
+
+  /* Logo */
+
+  .otp-logo-container {
+    width: 145px;
+  }
+
+
+  /* Heading */
+
+  .otp-heading {
+    margin-top: 5px;
+  }
+
+  .otp-heading h1 {
+    font-size: 37px;
+  }
+
+  .otp-heading p {
+    margin-top: 9px;
+
+    font-size: 16px;
+  }
+
+  .otp-heading strong {
+    font-size: 16px;
+  }
+
+
+  /* OTP */
+
+  .otp-inputs {
+    margin-top: 27px;
+
+    gap: 8px;
+  }
+
+  .otp-input {
+    width: 51px;
+    height: 57px;
+
+    border-radius: 11px;
+
+    font-size: 23px;
+  }
+
+
+  /* Verify */
+
+  .verify-button {
+    height: 58px;
+
+    margin-top: 20px;
+
+    border-radius: 17px;
+
+    font-size: 18px;
+  }
+
+  .verify-button strong {
+    right: 21px;
+
+    font-size: 28px;
+  }
+
+
+  /* Resend */
+
+  .resend-section {
+    margin-top: 14px;
+  }
+
+  .resend-section p,
+  .resend-button {
+    font-size: 13px;
+  }
+
+
+  /* Hero */
+
+  .otp-hero {
+    width: 128%;
+
+    bottom: -2%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .otp-progress {
+    width: 205px;
+  }
+
+  .otp-progress-step {
+    width: 38px;
+
+    font-size: 9px;
+  }
+
+  .otp-progress-line {
+    width: 31px;
+  }
+
+  .otp-content {
+    top: 9.5%;
+
+    width: 91%;
+  }
+
+  .otp-logo-container {
+    width: 130px;
+  }
+
+  .otp-heading h1 {
+    font-size: 33px;
+  }
+
+  .otp-heading p,
+  .otp-heading strong {
+    font-size: 14px;
+  }
+
+  .otp-inputs {
+    gap: 6px;
+
+    margin-top: 23px;
+  }
+
+  .otp-input {
+    width: 47px;
+    height: 53px;
+
+    font-size: 21px;
+  }
+
+  .verify-button {
+    height: 54px;
+
+    font-size: 17px;
+  }
+
+  .otp-hero {
+    width: 138%;
+  }
+}
+
+
+/* =========================================================
+   SHORT DESKTOP
+========================================================= */
+
+@media (min-width: 601px) and (max-height: 750px) {
+
+  .otp-content {
+    top: 7%;
+
+    transform:
+      translateX(-50%)
+      scale(0.86);
+
+    transform-origin: top center;
+  }
+
+  .otp-hero {
+    width: min(650px, 60vw);
+
+    bottom: -10%;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.profile-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 25%,
+      #123a7a 0%,
+      #09245a 32%,
+      #041538 68%,
+      #010720 100%
+    );
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.profile-glow {
+  position: absolute;
+  border-radius: 50%;
+
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.profile-glow-blue {
+  width: 60%;
+  height: 45%;
+
+  top: -10%;
+  left: 20%;
+
+  background: rgba(0, 100, 255, 0.20);
+}
+
+
+/* =========================================================
+   FLOATING DICE
+========================================================= */
+
+.profile-floating-dice {
+  position: absolute;
+
+  color: #2d68c5;
+  opacity: 0.15;
+
+  font-size: clamp(45px, 6vw, 80px);
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.profile-dice-one {
+  top: 13%;
+  left: -2%;
+
+  transform: rotate(-25deg);
+}
+
+.profile-dice-two {
+  top: 28%;
+  right: -3%;
+
+  transform: rotate(25deg);
+}
+
+.profile-dice-three {
+  bottom: 12%;
+  left: -3%;
+
+  transform: rotate(-20deg);
+}
+
+
+/* =========================================================
+   DECORATIVE TEXT
+========================================================= */
+
+.profile-decoration {
+  position: absolute;
+
+  color: #91a9df;
+
+  font-family: cursive;
+
+  font-size: 15px;
+
+  line-height: 1.05;
+
+  opacity: 0.9;
+
+  z-index: 4;
+
+  pointer-events: none;
+}
+
+.profile-decoration span {
+  display: block;
+}
+
+.profile-decoration div {
+  margin-top: 8px;
+
+  color: #168cff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 34px;
+
+  line-height: 0.7;
+}
+
+.decoration-left {
+  top: 14%;
+  left: 5%;
+
+  transform: rotate(-8deg);
+}
+
+.decoration-right {
+  top: 17%;
+  right: 5%;
+
+  text-align: right;
+
+  transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.profile-header {
+  position: absolute;
+
+  top: 4%;
+  left: 50%;
+
+  width: min(650px, 90%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+
+  z-index: 30;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.profile-back-button {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(61, 106, 220, 0.65);
+  border-radius: 50%;
+
+  background: rgba(4, 19, 57, 0.75);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 5px 15px rgba(0,0,0,0.25);
+}
+
+.profile-back-button span {
+  font-size: 34px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.profile-progress {
+  position: absolute;
+
+  top: 5px;
+  left: 50%;
+
+  width: 390px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.profile-progress-step {
+  width: 62px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #697797;
+
+  font-size: 13px;
+}
+
+.profile-progress-step.active,
+.profile-progress-step.completed {
+  color: #ffffff;
+}
+
+.profile-progress-dot {
+  width: 14px;
+  height: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #46516f;
+
+  color: transparent;
+
+  font-size: 9px;
+}
+
+.profile-progress-step.completed .profile-progress-dot,
+.profile-progress-step.active .profile-progress-dot {
+  background: #159fff;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 8px #159fff,
+    0 0 18px rgba(21,159,255,0.55);
+}
+
+.profile-progress-line {
+  width: 62px;
+  height: 3px;
+
+  margin-top: 5px;
+
+  border-radius: 20px;
+
+  background: #424d6d;
+}
+
+.completed-line,
+.active-line {
+  background: #159fff;
+
+  box-shadow:
+    0 0 8px rgba(21,159,255,0.7);
+}
+
+
+/* =========================================================
+   HELP BUTTON
+========================================================= */
+
+.profile-help-button {
+  margin-left: auto;
+
+  padding-top: 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #20aaff;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.profile-content {
+  position: absolute;
+
+  top: 9.5%;
+  left: 50%;
+
+  width: min(650px, 82%);
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.profile-logo-container {
+  width: 170px;
+
+  margin: 0 auto;
+}
+
+.profile-logo {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.profile-heading {
+  margin-top: 5px;
+
+  text-align: center;
+}
+
+.profile-heading h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.profile-heading h1 span {
+  color: #20aaff;
+}
+
+.profile-heading p {
+  margin: 8px 0 0;
+
+  color: #adb8d2;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   AVATAR HEADER
+========================================================= */
+
+.avatar-header {
+  margin-top: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.view-more-button {
+  border: none;
+
+  background: transparent;
+
+  color: #15baff;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.view-more-button span {
+  margin-left: 5px;
+
+  font-size: 20px;
+
+  vertical-align: -2px;
+}
+
+
+/* =========================================================
+   AVATAR LIST
+========================================================= */
+
+.avatar-list {
+  margin-top: 9px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar-item {
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.avatar-circle {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 2px solid #4d4f75;
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #4c4779,
+      #211e48
+    );
+
+  font-size: 46px;
+
+  transition: 0.18s ease;
+}
+
+.avatar-circle span {
+  transform: translateY(5px);
+}
+
+.avatar-item.selected .avatar-circle {
+  border: 3px solid #12aaff;
+
+  box-shadow:
+    0 0 0 3px rgba(18,170,255,0.18),
+    0 0 15px rgba(18,170,255,0.4);
+}
+
+.avatar-check {
+  position: absolute;
+
+  right: -1px;
+  bottom: -1px;
+
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  background: #13aaff;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* Avatar colors */
+
+.avatar-boy {
+  background: linear-gradient(145deg, #526084, #272b50);
+}
+
+.avatar-girl {
+  background: linear-gradient(145deg, #a85d9b, #4d315f);
+}
+
+.avatar-cool {
+  background: linear-gradient(145deg, #9a6c28, #40301c);
+}
+
+.avatar-woman {
+  background: linear-gradient(145deg, #8d6659, #453238);
+}
+
+.avatar-panda {
+  background: linear-gradient(145deg, #6d6681, #373248);
+}
+
+.avatar-cat {
+  background: linear-gradient(145deg, #92548c, #4b2755);
+}
+
+
+/* =========================================================
+   FORM FIELDS
+========================================================= */
+
+.profile-field {
+  margin-top: 10px;
+}
+
+.profile-field label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #e7ebf8;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.profile-input {
+  width: 100%;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+
+  border: 2px solid #294b99;
+  border-radius: 13px;
+
+  background: rgba(6,24,64,0.78);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.03);
+}
+
+.field-icon {
+  width: 53px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #8fa4d4;
+
+  font-size: 23px;
+}
+
+.username-icon {
+  font-size: 24px;
+}
+
+.calendar-icon {
+  font-size: 20px;
+}
+
+.profile-input input {
+  min-width: 0;
+
+  flex: 1;
+
+  height: 100%;
+
+  padding: 0 8px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 16px;
+}
+
+.profile-input input::placeholder {
+  color: #7c88aa;
+}
+
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.profile-input input[type="date"] {
+  color: #a9b5d1;
+}
+
+.profile-input input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.65;
+
+  filter: invert(1);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   USERNAME AVAILABLE
+========================================================= */
+
+.username-available {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding-right: 16px;
+
+  color: #21e29b;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.username-available span {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1ce49c;
+
+  color: #062744;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   TERMS & CONDITIONS
+========================================================= */
+
+.terms-row {
+  position: relative;
+
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  cursor: pointer;
+}
+
+.terms-row input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+.custom-checkbox {
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #1c86ee;
+  border-radius: 6px;
+
+  background: #0a2b6a;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.terms-text {
+  color: #aab5ce;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+.terms-text a {
+  margin: 0 4px;
+
+  color: #18b5ff;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+========================================================= */
+
+.profile-continue-button {
+  position: relative;
+
+  width: min(510px, 100%);
+  height: 62px;
+
+  display: block;
+
+  margin: 17px auto 0;
+
+  border: 2px solid #ffe477;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffdc63 0%,
+      #ffc12e 55%,
+      #ffac19 100%
+    );
+
+  color: #07163d;
+
+  font-size: 21px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #bd7100,
+    0 9px 25px rgba(255,183,25,0.4),
+    inset 0 3px 5px rgba(255,255,255,0.85);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.profile-continue-button:hover {
+  transform: translateY(-2px);
+}
+
+.profile-continue-button:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 2px 0 #bd7100,
+    0 5px 12px rgba(255,183,25,0.3);
+}
+
+.profile-continue-button strong {
+  position: absolute;
+
+  right: 27px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 31px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.profile-hero {
+  position: absolute;
+
+  left: 50%;
+  bottom: -8%;
+
+  width: min(760px, 78%);
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+.profile-hero-glow {
+  position: absolute;
+
+  top: 30%;
+  left: 50%;
+
+  width: 60%;
+  height: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255,180,25,0.22);
+
+  filter: blur(60px);
+
+  z-index: -1;
+}
+
+.profile-hero-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+
+  filter:
+    drop-shadow(0 -10px 20px rgba(0,0,0,0.4));
+}
+
+
+/* =========================================================
+   BOTTOM BRAND
+========================================================= */
+
+.profile-bottom-brand {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10px;
+
+  width: min(500px, 70%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  color: #8e9abd;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  z-index: 20;
+}
+
+.profile-bottom-brand span {
+  width: 55px;
+  height: 1px;
+
+  background: #526184;
+}
+
+.profile-bottom-brand p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .profile-header {
+    top: 3%;
+    width: 90%;
+  }
+
+  .profile-back-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-back-button span {
+    font-size: 30px;
+  }
+
+
+  /* Progress */
+
+  .profile-progress {
+    top: 3px;
+    width: 220px;
+  }
+
+  .profile-progress-step {
+    width: 42px;
+    font-size: 10px;
+    gap: 6px;
+  }
+
+  .profile-progress-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .profile-progress-line {
+    width: 36px;
+    height: 2px;
+  }
+
+
+  /* Help */
+
+  .profile-help-button {
+    padding-top: 12px;
+    font-size: 11px;
+  }
+
+
+  /* Decorative text */
+
+  .profile-decoration {
+    font-size: 10px;
+  }
+
+  .profile-decoration div {
+    font-size: 27px;
+  }
+
+  .decoration-left {
+    top: 15%;
+    left: 2%;
+  }
+
+  .decoration-right {
+    top: 20%;
+    right: 2%;
+  }
+
+
+  /* Content */
+
+  .profile-content {
+    top: 9.5%;
+    width: 82%;
+  }
+
+
+  /* Logo */
+
+  .profile-logo-container {
+    width: 125px;
+  }
+
+
+  /* Heading */
+
+  .profile-heading {
+    margin-top: 3px;
+  }
+
+  .profile-heading h1 {
+    font-size: 33px;
+  }
+
+  .profile-heading p {
+    margin-top: 6px;
+    font-size: 15px;
+  }
+
+
+  /* Avatar */
+
+  .avatar-header {
+    margin-top: 17px;
+  }
+
+  .avatar-header h2 {
+    font-size: 13px;
+  }
+
+  .view-more-button {
+    font-size: 10px;
+  }
+
+  .avatar-list {
+    margin-top: 7px;
+  }
+
+  .avatar-item {
+    width: 49px;
+    height: 49px;
+  }
+
+  .avatar-circle {
+    font-size: 29px;
+  }
+
+  .avatar-check {
+    width: 17px;
+    height: 17px;
+
+    font-size: 9px;
+
+    border-width: 1px;
+  }
+
+
+  /* Fields */
+
+  .profile-field {
+    margin-top: 7px;
+  }
+
+  .profile-field label {
+    margin-bottom: 4px;
+    font-size: 11px;
+  }
+
+  .profile-input {
+    height: 46px;
+    border-radius: 11px;
+  }
+
+  .field-icon {
+    width: 42px;
+    font-size: 19px;
+  }
+
+  .profile-input input {
+    font-size: 13px;
+  }
+
+  .username-available {
+    padding-right: 9px;
+    font-size: 9px;
+  }
+
+  .username-available span {
+    width: 15px;
+    height: 15px;
+    font-size: 9px;
+  }
+
+
+  /* Terms */
+
+  .terms-row {
+    margin-top: 9px;
+    gap: 7px;
+  }
+
+  .custom-checkbox {
+    width: 21px;
+    height: 21px;
+    font-size: 13px;
+  }
+
+  .terms-text {
+    font-size: 9px;
+  }
+
+  .terms-text a {
+    margin: 0 2px;
+  }
+
+
+  /* Continue */
+
+  .profile-continue-button {
+    height: 53px;
+
+    margin-top: 12px;
+
+    border-radius: 15px;
+
+    font-size: 17px;
+  }
+
+  .profile-continue-button strong {
+    right: 21px;
+    font-size: 27px;
+  }
+
+
+  /* Hero */
+
+  .profile-hero {
+    width: 135%;
+    bottom: -4%;
+  }
+
+
+  /* Bottom */
+
+  .profile-bottom-brand {
+    bottom: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    gap: 7px;
+  }
+
+  .profile-bottom-brand span {
+    width: 30px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .profile-progress {
+    width: 205px;
+  }
+
+  .profile-progress-step {
+    width: 38px;
+    font-size: 9px;
+  }
+
+  .profile-progress-line {
+    width: 31px;
+  }
+
+  .profile-content {
+    top: 9%;
+    width: 83%;
+  }
+
+  .profile-logo-container {
+    width: 115px;
+  }
+
+  .profile-heading h1 {
+    font-size: 30px;
+  }
+
+  .profile-heading p {
+    font-size: 13px;
+  }
+
+  .avatar-item {
+    width: 44px;
+    height: 44px;
+  }
+
+  .avatar-circle {
+    font-size: 26px;
+  }
+
+  .profile-input {
+    height: 43px;
+  }
+
+  .profile-continue-button {
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .profile-hero {
+    width: 145%;
+  }
+}
+
+
+/* =========================================================
+   SHORT DESKTOP
+========================================================= */
+
+@media (min-width: 601px) and (max-height: 750px) {
+
+  .profile-content {
+    top: 7%;
+
+    transform:
+      translateX(-50%)
+      scale(0.82);
+
+    transform-origin: top center;
+  }
+
+  .profile-hero {
+    width: min(650px, 60vw);
+
+    bottom: -12%;
+  }
+}
+
+
+
+
+
+/* =========================================================
+   DONE / ALL SET SCREEN
+========================================================= */
+
+.done-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 50% 25%,
+      #123d82 0%,
+      #09275c 35%,
+      #041638 68%,
+      #010720 100%
+    );
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.done-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.done-glow-blue {
+  width: 60%;
+  height: 50%;
+
+  top: -15%;
+  left: 20%;
+
+  background: rgba(0, 100, 255, 0.20);
+}
+
+.done-glow-purple {
+  width: 35%;
+  height: 30%;
+
+  right: -12%;
+  top: 25%;
+
+  background: rgba(75, 55, 190, 0.15);
+}
+
+
+/* =========================================================
+   FLOATING DICE
+========================================================= */
+
+.done-floating-dice {
+  position: absolute;
+
+  color: #2870d5;
+
+  opacity: 0.15;
+
+  font-size: clamp(45px, 6vw, 80px);
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.done-dice-one {
+  top: 12%;
+  left: -3%;
+
+  transform: rotate(-25deg);
+}
+
+.done-dice-two {
+  top: 34%;
+  right: -4%;
+
+  transform: rotate(22deg);
+}
+
+.done-dice-three {
+  bottom: 15%;
+  right: -2%;
+
+  transform: rotate(-18deg);
+}
+
+
+/* =========================================================
+   DECORATIVE CROWN
+========================================================= */
+
+.done-crown {
+  position: absolute;
+
+  top: 13%;
+  right: 7%;
+
+  color: #ffd52b;
+
+  font-size: 30px;
+
+  opacity: 0.9;
+
+  transform: rotate(8deg);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.done-header {
+  position: absolute;
+
+  top: 4%;
+  left: 50%;
+
+  width: min(650px, 90%);
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+
+  z-index: 30;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.done-back-button {
+  width: 56px;
+  height: 56px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(61, 106, 220, 0.65);
+  border-radius: 50%;
+
+  background: rgba(4, 19, 57, 0.78);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 5px 15px rgba(0,0,0,0.25);
+}
+
+.done-back-button span {
+  font-size: 34px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.done-progress {
+  position: absolute;
+
+  top: 5px;
+  left: 50%;
+
+  width: 390px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.done-progress-step {
+  width: 62px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #697797;
+
+  font-size: 13px;
+}
+
+.done-progress-step.completed,
+.done-progress-step.active {
+  color: #ffffff;
+}
+
+.done-progress-dot {
+  width: 14px;
+  height: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #46516f;
+
+  color: transparent;
+
+  font-size: 9px;
+}
+
+.done-progress-step.completed .done-progress-dot,
+.done-progress-step.active .done-progress-dot {
+  background: #159fff;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 0 8px #159fff,
+    0 0 18px rgba(21,159,255,0.55);
+}
+
+.done-progress-line {
+  width: 62px;
+  height: 3px;
+
+  margin-top: 5px;
+
+  border-radius: 20px;
+
+  background: #424d6d;
+}
+
+.done-progress-line.completed-line,
+.done-progress-line.active-line {
+  background: #159fff;
+
+  box-shadow:
+    0 0 8px rgba(21,159,255,0.7);
+}
+
+
+/* =========================================================
+   HELP BUTTON
+========================================================= */
+
+.done-help-button {
+  margin-left: auto;
+
+  padding-top: 14px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #20aaff;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.done-content {
+  position: absolute;
+
+  top: 10%;
+  left: 50%;
+
+  width: min(650px, 82%);
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  z-index: 20;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.done-logo-container {
+  width: 155px;
+
+  margin: 0 auto;
+}
+
+.done-logo {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.done-heading {
+  margin-top: 3px;
+}
+
+.done-heading h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(38px, 4vw, 52px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.done-heading h1 span {
+  color: #20aaff;
+}
+
+.done-heading p {
+  margin: 7px 0 0;
+
+  color: #b0bad3;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.done-avatar-wrapper {
+  position: relative;
+
+  width: 104px;
+  height: 104px;
+
+  margin: 13px auto 0;
+}
+
+.done-avatar-glow {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  background: rgba(15,170,255,0.35);
+
+  filter: blur(18px);
+}
+
+.done-avatar {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border: 3px solid #0baaff;
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #a45b96,
+      #362653
+    );
+
+  box-shadow:
+    0 0 0 4px rgba(13,164,255,0.15),
+    0 0 22px rgba(13,164,255,0.65);
+
+  font-size: 66px;
+}
+
+.done-avatar span {
+  transform: translateY(6px);
+}
+
+.done-avatar-check {
+  position: absolute;
+
+  right: -2px;
+  bottom: 4px;
+
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  background: #20dc94;
+
+  color: #063d35;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   USERNAME
+========================================================= */
+
+.done-username {
+  margin-top: 5px;
+}
+
+.done-username h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+.done-username p {
+  margin: 3px 0 0;
+
+  color: #aab5d0;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FEATURES CARD
+========================================================= */
+
+.done-features {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 10px 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  border: 1px solid #1762c5;
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8,44,105,0.90),
+      rgba(4,25,66,0.92)
+    );
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.25),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.done-feature {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.done-feature:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  top: 3px;
+
+  width: 1px;
+  height: 55px;
+
+  background: #294b81;
+}
+
+
+/* =========================================================
+   FEATURE ICONS
+========================================================= */
+
+.done-feature-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(20,35,90,0.95);
+
+  font-size: 23px;
+}
+
+.done-feature-icon.purple {
+  box-shadow:
+    0 0 12px rgba(145,72,255,0.25);
+}
+
+.done-feature-icon.yellow {
+  box-shadow:
+    0 0 12px rgba(255,194,38,0.25);
+}
+
+.done-feature-icon.green {
+  box-shadow:
+    0 0 12px rgba(24,226,170,0.25);
+}
+
+.done-feature p {
+  margin: 5px 0 0;
+
+  color: #e6ebf8;
+
+  font-size: 11px;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   START PLAYING BUTTON
+========================================================= */
+
+.done-start-button {
+  position: relative;
+
+  width: min(510px, 100%);
+  height: 59px;
+
+  margin: 12px auto 0;
+
+  display: block;
+
+  border: 2px solid #ffe477;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffdc63 0%,
+      #ffc12e 55%,
+      #ffac19 100%
+    );
+
+  color: #07163d;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 0 #bd7100,
+    0 9px 22px rgba(255,183,25,0.38),
+    inset 0 3px 5px rgba(255,255,255,0.85);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.done-start-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 0 #bd7100,
+    0 12px 25px rgba(255,183,25,0.45),
+    inset 0 3px 5px rgba(255,255,255,0.85);
+}
+
+.done-start-button:active {
+  transform: translateY(3px);
+
+  box-shadow:
+    0 2px 0 #bd7100,
+    0 5px 12px rgba(255,183,25,0.3);
+}
+
+.done-start-button strong {
+  position: absolute;
+
+  right: 24px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 30px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   BOTTOM TEXT
+========================================================= */
+
+.done-bottom-text {
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: #9ca8c7;
+
+  font-family: cursive;
+
+  font-size: 13px;
+}
+
+.done-bottom-text span {
+  width: 40px;
+  height: 1px;
+
+  background: #6c7082;
+}
+
+.done-bottom-text p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   HERO / GAME BOARD
+========================================================= */
+
+.done-hero {
+  position: absolute;
+
+  left: 50%;
+  bottom: -13%;
+
+  width: min(780px, 100%);
+
+  transform: translateX(-50%);
+
+  z-index: 4;
+}
+
+.done-hero-glow {
+  position: absolute;
+
+  left: 50%;
+  top: 35%;
+
+  width: 60%;
+  height: 45%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: rgba(255,176,20,0.20);
+
+  filter: blur(60px);
+
+  z-index: -1;
+}
+
+.done-hero-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  pointer-events: none;
+
+  -webkit-user-drag: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .done-header {
+    top: 3%;
+    width: 90%;
+  }
+
+
+  /* Back */
+
+  .done-back-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .done-back-button span {
+    font-size: 30px;
+  }
+
+
+  /* Progress */
+
+  .done-progress {
+    width: 220px;
+    top: 3px;
+  }
+
+  .done-progress-step {
+    width: 42px;
+
+    font-size: 10px;
+
+    gap: 6px;
+  }
+
+  .done-progress-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .done-progress-line {
+    width: 36px;
+    height: 2px;
+  }
+
+
+  /* Help */
+
+  .done-help-button {
+    padding-top: 12px;
+    font-size: 11px;
+  }
+
+
+  /* Crown */
+
+  .done-crown {
+    top: 13%;
+    right: 6%;
+
+    font-size: 23px;
+  }
+
+
+  /* Main */
+
+  .done-content {
+    top: 10%;
+    width: 84%;
+  }
+
+
+  /* Logo */
+
+  .done-logo-container {
+    width: 125px;
+  }
+
+
+  /* Heading */
+
+  .done-heading h1 {
+    font-size: 34px;
+  }
+
+  .done-heading p {
+    margin-top: 5px;
+
+    font-size: 14px;
+  }
+
+
+  /* Avatar */
+
+  .done-avatar-wrapper {
+    width: 86px;
+    height: 86px;
+
+    margin-top: 10px;
+  }
+
+  .done-avatar {
+    font-size: 53px;
+  }
+
+  .done-avatar-check {
+    width: 20px;
+    height: 20px;
+
+    font-size: 10px;
+  }
+
+
+  /* Username */
+
+  .done-username h2 {
+    font-size: 16px;
+  }
+
+  .done-username p {
+    font-size: 10px;
+  }
+
+
+  /* Features */
+
+  .done-features {
+    margin-top: 10px;
+    padding: 8px 0;
+
+    border-radius: 12px;
+  }
+
+  .done-feature-icon {
+    width: 36px;
+    height: 36px;
+
+    font-size: 20px;
+  }
+
+  .done-feature p {
+    font-size: 9px;
+  }
+
+  .done-feature:not(:last-child)::after {
+    height: 48px;
+  }
+
+
+  /* Start */
+
+  .done-start-button {
+    height: 51px;
+
+    margin-top: 10px;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+  }
+
+  .done-start-button strong {
+    right: 19px;
+
+    font-size: 26px;
+  }
+
+
+  /* Bottom text */
+
+  .done-bottom-text {
+    margin-top: 8px;
+
+    gap: 8px;
+
+    font-size: 10px;
+  }
+
+  .done-bottom-text span {
+    width: 28px;
+  }
+
+
+  /* Hero */
+
+  .done-hero {
+    width: 145%;
+    bottom: -7%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .done-progress {
+    width: 205px;
+  }
+
+  .done-progress-step {
+    width: 38px;
+
+    font-size: 9px;
+  }
+
+  .done-progress-line {
+    width: 31px;
+  }
+
+  .done-content {
+    top: 9.5%;
+    width: 85%;
+  }
+
+  .done-logo-container {
+    width: 112px;
+  }
+
+  .done-heading h1 {
+    font-size: 30px;
+  }
+
+  .done-heading p {
+    font-size: 12px;
+  }
+
+  .done-avatar-wrapper {
+    width: 78px;
+    height: 78px;
+  }
+
+  .done-avatar {
+    font-size: 47px;
+  }
+
+  .done-feature-icon {
+    width: 33px;
+    height: 33px;
+
+    font-size: 18px;
+  }
+
+  .done-feature p {
+    font-size: 8px;
+  }
+
+  .done-start-button {
+    height: 48px;
+
+    font-size: 16px;
+  }
+
+  .done-hero {
+    width: 155%;
+  }
+}
+
+
+/* =========================================================
+   SHORT DESKTOP
+========================================================= */
+
+@media (min-width: 601px) and (max-height: 750px) {
+
+  .done-content {
+    top: 7%;
+
+    transform:
+      translateX(-50%)
+      scale(0.84);
+
+    transform-origin: top center;
+  }
+
+  .done-hero {
+    width: min(650px, 60vw);
+
+    bottom: -15%;
+  }
+}
+
+
+
+/* =========================================================
+   HOME SCREEN
+========================================================= */
+
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #123c80 0%,
+      #082a5c 38%,
+      #041a40 72%,
+      #020a25 100%
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.home-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(70px);
+}
+
+.home-glow-one {
+  width: 70%;
+  height: 35%;
+
+  top: -15%;
+  left: 15%;
+
+  background: rgba(0, 115, 255, .18);
+}
+
+.home-glow-two {
+  width: 60%;
+  height: 40%;
+
+  right: -30%;
+  bottom: 15%;
+
+  background: rgba(0, 90, 220, .12);
+}
+
+
+/* Floating Dice */
+
+.home-floating-dice {
+  position: absolute;
+
+  color: #4d8fe0;
+
+  opacity: .12;
+
+  pointer-events: none;
+
+  font-size: 70px;
+
+  line-height: 1;
+}
+
+.home-dice-one {
+  top: 15%;
+  left: -18px;
+
+  transform: rotate(-25deg);
+}
+
+.home-dice-two {
+  top: 35%;
+  right: -25px;
+
+  transform: rotate(28deg);
+}
+
+.home-dice-three {
+  bottom: 15%;
+  left: -30px;
+
+  transform: rotate(-20deg);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.home-header {
+  position: absolute;
+
+  top: 2.5%;
+  left: 50%;
+
+  width: 94%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
+
+/* User */
+
+.home-user-section {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.home-user-avatar {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #009dff;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      #b969a4,
+      #332051
+    );
+
+  box-shadow:
+    0 0 12px rgba(0, 157, 255, .6);
+
+  font-size: 23px;
+}
+
+.home-user-info h3 {
+  margin: 0;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.home-user-info > span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #9cafcf;
+
+  font-size: 7px;
+}
+
+
+/* XP */
+
+.home-xp-row {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 4px;
+}
+
+.home-xp-bar {
+  width: 58px;
+  height: 5px;
+
+  overflow: hidden;
+
+  border: 1px solid #2e4e7e;
+
+  border-radius: 10px;
+
+  background: #10264b;
+}
+
+.home-xp-progress {
+  width: 64%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffd329,
+      #ffad16
+    );
+}
+
+.home-xp-row small {
+  color: #91a8ce;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   WALLET
+========================================================= */
+
+.home-wallet {
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+}
+
+.home-wallet-item {
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 3px 4px;
+
+  border: 1px solid #28569c;
+
+  border-radius: 15px;
+
+  background: rgba(3, 20, 53, .9);
+
+  font-size: 8px;
+}
+
+.home-wallet-item button {
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #0876e8;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+.home-notification {
+  position: relative;
+
+  width: 27px;
+  height: 27px;
+
+  padding: 0;
+
+  border: 1px solid #31538e;
+
+  border-radius: 50%;
+
+  background: #061c43;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+.home-notification i {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ff3d58;
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.home-welcome {
+  position: absolute;
+
+  top: 13.5%;
+  left: 6%;
+
+  width: 80%;
+
+  z-index: 10;
+}
+
+.home-welcome-small {
+  display: block;
+
+  color: #b8c8e2;
+
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+.home-welcome h1 {
+  margin: 7px 0 0;
+
+  color: #ffffff;
+
+  font-size: 29px;
+
+  line-height: .95;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+}
+
+.home-welcome h1 span {
+  color: #08a9ff;
+}
+
+.home-welcome p {
+  margin-top: 5px;
+
+  color: #aabbd7;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   HANDWRITING
+========================================================= */
+
+.home-handwriting {
+  position: absolute;
+
+  top: 14%;
+  right: 5%;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #c0cee5;
+
+  font-family: cursive;
+
+  font-size: 7px;
+
+  line-height: .9;
+
+  transform: rotate(-7deg);
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   GAME GRID
+========================================================= */
+
+.home-game-grid {
+  position: absolute;
+
+  top: 25%;
+
+  left: 50%;
+
+  width: 92%;
+
+  transform: translateX(-50%);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 5px;
+
+  z-index: 15;
+}
+
+
+/* =========================================================
+   GAME CARD
+========================================================= */
+
+.home-game-card {
+  position: relative;
+
+  height: 164px;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  border-radius: 9px;
+
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 14px rgba(0, 0, 0, .35);
+
+  transition:
+    transform .2s ease;
+}
+
+.home-game-card:not(:disabled):hover {
+  transform: translateY(-3px);
+}
+
+.home-game-card:disabled {
+  cursor: default;
+}
+
+
+/* =========================================================
+   CARD ART
+========================================================= */
+
+.home-card-art {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 67%;
+
+  overflow: hidden;
+}
+
+.home-card-art img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   LUDO
+========================================================= */
+
+.home-ludo-card {
+  border: 1px solid #0785ff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0878e8,
+      #052d70
+    );
+}
+
+.home-ludo-card .home-card-art img {
+  object-position: center;
+}
+
+
+/* =========================================================
+   CRICKET
+========================================================= */
+
+.home-cricket-card {
+  border: 1px solid #00bba7;
+
+  background:
+    linear-gradient(
+      180deg,
+      #087c79,
+      #063f4c
+    );
+}
+
+.cricket-art {
+  background:
+    radial-gradient(
+      circle at center,
+      #169b96,
+      #07535d 65%,
+      #04353d
+    );
+}
+
+.cricket-stars {
+  position: absolute;
+
+  top: 8px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #d7f5ec;
+
+  font-size: 11px;
+
+  letter-spacing: 5px;
+}
+
+.cricket-bat {
+  position: absolute;
+
+  left: 50%;
+  bottom: 3px;
+
+  transform:
+    translateX(-50%)
+    rotate(12deg);
+
+  font-size: 49px;
+}
+
+.cricket-ball {
+  position: absolute;
+
+  right: 9px;
+  bottom: 20px;
+
+  font-size: 22px;
+}
+
+
+/* =========================================================
+   UNO
+========================================================= */
+
+.home-uno-card {
+  border: 1px solid #a536ff;
+
+  background:
+    linear-gradient(
+      180deg,
+      #7b1bca,
+      #35105f
+    );
+}
+
+.uno-art {
+  background:
+    radial-gradient(
+      circle at center,
+      #b735e7,
+      #6712a6 65%,
+      #300b59
+    );
+}
+
+.uno-card {
+  position: absolute;
+
+  width: 42px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid white;
+
+  border-radius: 5px;
+
+  color: white;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 5px 8px rgba(0,0,0,.4);
+}
+
+.uno-one {
+  left: 16px;
+  top: 19px;
+
+  background: #087ee8;
+
+  transform: rotate(-20deg);
+}
+
+.uno-two {
+  left: 50%;
+  top: 9px;
+
+  transform:
+    translateX(-50%)
+    rotate(7deg);
+
+  background: #e43638;
+}
+
+.uno-three {
+  right: 13px;
+  top: 18px;
+
+  background: #11a75d;
+
+  transform: rotate(18deg);
+}
+
+
+/* =========================================================
+   BINGO
+========================================================= */
+
+.home-bingo-card {
+  border: 1px solid #ff6a1c;
+
+  background:
+    linear-gradient(
+      180deg,
+      #a83c0d,
+      #5b1b08
+    );
+}
+
+.bingo-art {
+  background:
+    radial-gradient(
+      circle at center,
+      #dd581c,
+      #922d0a 65%,
+      #4e1606
+    );
+}
+
+.bingo-board {
+  position: absolute;
+
+  top: 7px;
+  right: 7px;
+
+  width: 62px;
+
+  padding: 4px;
+
+  border-radius: 3px;
+
+  background: #f4eee1;
+
+  color: #7b2920;
+
+  transform: rotate(6deg);
+
+  text-align: center;
+
+  font-size: 6px;
+
+  box-shadow:
+    0 4px 7px rgba(0,0,0,.35);
+}
+
+.bingo-board strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 9px;
+}
+
+.bingo-board span {
+  display: block;
+
+  line-height: 10px;
+}
+
+.bingo-ball {
+  position: absolute;
+
+  left: 8px;
+  bottom: 8px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #ff5757,
+      #bd181d
+    );
+
+  color: white;
+
+  box-shadow:
+    0 5px 8px rgba(0,0,0,.45);
+
+  font-size: 8px;
+}
+
+.bingo-ball strong {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.home-coming-soon {
+  position: absolute;
+
+  top: 38px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  min-width: 67px;
+
+  padding: 5px 6px;
+
+  border: 1px solid rgba(255,255,255,.8);
+
+  border-radius: 4px;
+
+  background:
+    rgba(3, 12, 35, .92);
+
+  color: white;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  text-align: center;
+
+  letter-spacing: .5px;
+
+  z-index: 5;
+
+  box-shadow:
+    0 3px 8px rgba(0,0,0,.45);
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.home-card-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 39%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 7px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(3,12,35,0),
+      rgba(3,12,35,.98) 35%
+    );
+}
+
+.home-card-content h2 {
+  margin: 0;
+
+  font-size: 13px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.home-card-content p {
+  margin-top: 4px;
+
+  color: #c7d5eb;
+
+  font-size: 7px;
+}
+
+.home-play-now {
+  position: absolute;
+
+  top: -10px;
+
+  padding: 2px 5px;
+
+  border-radius: 4px;
+
+  background: #ffd21f;
+
+  color: #062052;
+
+  font-size: 7px;
+
+  font-weight: 900;
+}
+
+.home-card-arrow {
+  width: 24px;
+  height: 24px;
+
+  margin-top: auto;
+  margin-bottom: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #087fe8;
+
+  font-size: 15px;
+}
+
+.home-cricket-card .home-card-arrow {
+  background: #00a991;
+}
+
+.home-uno-card .home-card-arrow {
+  background: #8c23e8;
+}
+
+.home-bingo-card .home-card-arrow {
+  background: #e95a14;
+}
+
+
+/* =========================================================
+   REWARD BANNER
+========================================================= */
+
+.home-reward-banner {
+  position: absolute;
+
+  left: 50%;
+
+  top: 62%;
+
+  width: 92%;
+  height: 115px;
+
+  transform: translateX(-50%);
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  border: 1px solid #1665c1;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      110deg,
+      #092b63,
+      #0b3d80 60%,
+      #082a5e
+    );
+
+  box-shadow:
+    inset 0 0 30px rgba(0,120,255,.08);
+}
+
+
+/* Reward copy */
+
+.home-reward-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.home-reward-content h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  line-height: .9;
+
+  font-weight: 900;
+}
+
+.home-reward-content h2 span {
+  color: #08a9ff;
+}
+
+.home-reward-content p {
+  width: 150px;
+
+  margin-top: 7px;
+
+  color: #aec2e0;
+
+  font-size: 7px;
+
+  line-height: 1.3;
+}
+
+.home-reward-button {
+  height: 28px;
+
+  margin-top: 8px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  border: 1px solid #078cff;
+
+  border-radius: 20px;
+
+  background: #073d89;
+
+  color: white;
+
+  font-size: 8px;
+}
+
+.home-reward-button span {
+  font-size: 14px;
+}
+
+
+/* Trophy */
+
+.home-trophy {
+  position: relative;
+
+  width: 130px;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-trophy-icon {
+  position: relative;
+
+  z-index: 2;
+
+  font-size: 58px;
+
+  transform: rotate(-8deg);
+
+  filter:
+    drop-shadow(
+      0 8px 7px rgba(0,0,0,.4)
+    );
+}
+
+.home-trophy-rays {
+  position: absolute;
+
+  color: #ffd33a;
+
+  font-size: 70px;
+
+  opacity: .45;
+}
+
+.home-confetti {
+  position: absolute;
+
+  color: #ffd33a;
+
+  font-size: 10px;
+}
+
+.confetti-one {
+  top: 24px;
+  left: 5px;
+}
+
+.confetti-two {
+  top: 68px;
+  right: 8px;
+}
+
+.confetti-three {
+  bottom: 15px;
+  left: 30px;
+}
+
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.home-bottom-nav {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2%;
+
+  width: 94%;
+  height: 54px;
+
+  transform: translateX(-50%);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  align-items: center;
+
+  border: 1px solid #155bad;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #06224f,
+      #03152f
+    );
+
+  z-index: 50;
+}
+
+.home-nav-item {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #738ab5;
+}
+
+.home-nav-item span {
+  font-size: 14px;
+}
+
+.home-nav-item small {
+  font-size: 6px;
+}
+
+.home-nav-item.active {
+  color: #08b5ff;
+}
+
+
+/* Play */
+
+.home-play-button {
+  position: relative;
+
+  width: 58px;
+  height: 58px;
+
+  margin: -18px auto 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #078cff;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #0a56b7,
+      #052650
+    );
+
+  box-shadow:
+    0 0 18px rgba(0,130,255,.6);
+
+  color: white;
+}
+
+.home-play-button div {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 19px;
+}
+
+.home-play-button small {
+  position: absolute;
+
+  bottom: -18px;
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .home-wallet-item:nth-child(2) {
+    display: none;
+  }
+
+  .home-user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .home-welcome {
+    top: 14%;
+  }
+
+  .home-welcome h1 {
+    font-size: 27px;
+  }
+
+  .home-game-grid {
+    top: 25%;
+    gap: 4px;
+  }
+
+  .home-game-card {
+    height: 153px;
+  }
+
+  .home-card-content h2 {
+    font-size: 11px;
+  }
+
+  .home-card-content p {
+    font-size: 6px;
+  }
+
+  .home-reward-banner {
+    top: 61.5%;
+    height: 105px;
+  }
+
+  .home-reward-content h2 {
+    font-size: 16px;
+  }
+
+  .home-trophy-icon {
+    font-size: 50px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .home-header {
+    width: 92%;
+  }
+
+  .home-wallet {
+    gap: 2px;
+  }
+
+  .home-wallet-item {
+    font-size: 7px;
+  }
+
+  .home-welcome h1 {
+    font-size: 24px;
+  }
+
+  .home-game-card {
+    height: 145px;
+  }
+
+  .home-coming-soon {
+    min-width: 58px;
+
+    font-size: 7px;
+  }
+
+  .home-reward-banner {
+    height: 100px;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP — MOBILE ONLY
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .home-page::after {
+    content: "Ludo is currently available on mobile only";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #020a25;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-align: center;
+
+    z-index: 999;
+  }
+
+}
+
+
+/* =========================================================
+   LUDO SCREEN
+   Add this section at the END of App.css
+========================================================= */
+
+.ludo-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #12488e 0%,
+      #092c64 35%,
+      #041b43 70%,
+      #020b25 100%
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.ludo-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 70%;
+  height: 50%;
+
+  top: -15%;
+  left: 15%;
+
+  border-radius: 50%;
+
+  background: rgba(0, 120, 255, 0.16);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+.ludo-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 60%;
+  height: 40%;
+
+  right: -25%;
+  bottom: 10%;
+
+  border-radius: 50%;
+
+  background: rgba(0, 80, 255, 0.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.ludo-header {
+  position: absolute;
+
+  top: 2%;
+  left: 50%;
+
+  width: 94%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 20;
+}
+
+
+/* Back button */
+
+.ludo-back-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(58, 137, 255, 0.65);
+
+  border-radius: 50%;
+
+  background:
+    rgba(4, 27, 67, 0.85);
+
+  color: white;
+
+  font-size: 21px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 12px rgba(0, 119, 255, 0.2);
+}
+
+.ludo-back-button:hover {
+  background: #0a397b;
+}
+
+
+/* =========================================================
+   USER MINI HEADER
+========================================================= */
+
+.ludo-user-info {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-left: 5px;
+}
+
+.ludo-user-avatar {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #08a9ff;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      #d47ab1,
+      #38205b
+    );
+
+  font-size: 18px;
+
+  box-shadow:
+    0 0 12px rgba(0, 166, 255, 0.5);
+}
+
+.ludo-user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.ludo-user-details strong {
+  font-size: 9px;
+}
+
+.ludo-user-details span {
+  margin-top: 2px;
+
+  color: #9eb4d8;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   WALLET
+========================================================= */
+
+.ludo-wallet {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+}
+
+.ludo-wallet-item {
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 3px 5px;
+
+  border: 1px solid #285b9f;
+
+  border-radius: 15px;
+
+  background: rgba(2, 18, 47, 0.9);
+
+  font-size: 8px;
+}
+
+.ludo-wallet-item button {
+  width: 15px;
+  height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #087cf0;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.ludo-logo {
+  position: absolute;
+
+  top: 7%;
+  left: 50%;
+
+  width: 145px;
+  max-width: 48%;
+
+  transform: translateX(-50%);
+
+  object-fit: contain;
+
+  z-index: 10;
+
+  filter:
+    drop-shadow(
+      0 5px 10px rgba(0, 0, 0, 0.45)
+    );
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.ludo-title-section {
+  position: absolute;
+
+  top: 20%;
+
+  left: 50%;
+
+  width: 90%;
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  z-index: 10;
+}
+
+.ludo-title-section h1 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 20px;
+
+  font-weight: 900;
+}
+
+.ludo-title-section h1 span {
+  color: #08aaff;
+}
+
+.ludo-title-section p {
+  margin-top: 3px;
+
+  color: #aabedc;
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   DECORATIVE TEXT
+========================================================= */
+
+.ludo-handwriting {
+  position: absolute;
+
+  right: 5%;
+  top: 10%;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #b7c9e6;
+
+  font-family: cursive;
+
+  font-size: 7px;
+
+  line-height: 0.95;
+
+  transform: rotate(-8deg);
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   GAME MODE GRID
+========================================================= */
+
+.ludo-mode-grid {
+  position: absolute;
+
+  top: 28%;
+  left: 50%;
+
+  width: 88%;
+
+  transform: translateX(-50%);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 7px;
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   MODE CARD
+========================================================= */
+
+.ludo-mode-card {
+  position: relative;
+
+  height: 125px;
+
+  overflow: hidden;
+
+  padding: 0;
+
+  border-radius: 10px;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.ludo-mode-card:hover {
+  transform: translateY(-3px);
+}
+
+
+/* Classic */
+
+.ludo-classic-card {
+  border: 1px solid #078dff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #086fd1,
+      #06285f
+    );
+
+  box-shadow:
+    0 5px 14px rgba(0, 100, 255, 0.2);
+}
+
+
+/* Turbo */
+
+.ludo-turbo-card {
+  border: 1px solid #b72cff;
+
+  background:
+    linear-gradient(
+      145deg,
+      #7118ba,
+      #27094d
+    );
+
+  box-shadow:
+    0 5px 14px rgba(160, 0, 255, 0.2);
+}
+
+
+/* Battle */
+
+.ludo-battle-card {
+  border: 1px solid #ff3e42;
+
+  background:
+    linear-gradient(
+      145deg,
+      #bd2529,
+      #4a0b10
+    );
+
+  box-shadow:
+    0 5px 14px rgba(255, 30, 40, 0.2);
+}
+
+
+/* Tournament */
+
+.ludo-tournament-card {
+  border: 1px solid #00d79a;
+
+  background:
+    linear-gradient(
+      145deg,
+      #08795e,
+      #053c35
+    );
+
+  box-shadow:
+    0 5px 14px rgba(0, 220, 160, 0.2);
+}
+
+
+/* =========================================================
+   MODE CARD ART
+========================================================= */
+
+.ludo-mode-art {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 72%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 50px;
+}
+
+.ludo-classic-art {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 175, 255, 0.35),
+      transparent 70%
+    );
+}
+
+.ludo-turbo-art {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 40, 200, 0.3),
+      transparent 70%
+    );
+}
+
+.ludo-battle-art {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 40, 40, 0.3),
+      transparent 70%
+    );
+}
+
+.ludo-tournament-art {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 255, 170, 0.28),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   MODE CARD CONTENT
+========================================================= */
+
+.ludo-mode-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 42%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 8px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(2, 10, 30, 0.98) 25%
+    );
+}
+
+.ludo-mode-content h2 {
+  margin: 0;
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+.ludo-mode-content p {
+  margin-top: 3px;
+
+  color: #c3d2e9;
+
+  font-size: 6px;
+}
+
+.ludo-mode-arrow {
+  width: 23px;
+  height: 23px;
+
+  margin-top: auto;
+  margin-bottom: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #0787ef;
+
+  color: white;
+
+  font-size: 14px;
+}
+
+
+/* Card arrow colors */
+
+.ludo-turbo-card .ludo-mode-arrow {
+  background: #8b25e8;
+}
+
+.ludo-battle-card .ludo-mode-arrow {
+  background: #df3439;
+}
+
+.ludo-tournament-card .ludo-mode-arrow {
+  background: #08b97e;
+}
+
+
+/* =========================================================
+   FLOATING DICE
+========================================================= */
+
+.ludo-floating-dice {
+  position: absolute;
+
+  color: #6ba7e8;
+
+  opacity: .16;
+
+  pointer-events: none;
+
+  font-size: 65px;
+
+  z-index: 1;
+}
+
+.ludo-dice-one {
+  top: 18%;
+  left: -25px;
+
+  transform: rotate(-22deg);
+}
+
+.ludo-dice-two {
+  top: 45%;
+  right: -25px;
+
+  transform: rotate(25deg);
+}
+
+.ludo-dice-three {
+  bottom: 20%;
+  left: -20px;
+
+  transform: rotate(-15deg);
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.ludo-bottom-nav {
+  position: absolute;
+
+  left: 50%;
+  bottom: 2%;
+
+  width: 92%;
+  height: 48px;
+
+  transform: translateX(-50%);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  align-items: center;
+
+  border: 1px solid #155bad;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #062553,
+      #03152f
+    );
+
+  z-index: 50;
+}
+
+.ludo-nav-item {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #7890bb;
+}
+
+.ludo-nav-item span {
+  font-size: 12px;
+}
+
+.ludo-nav-item small {
+  font-size: 6px;
+}
+
+.ludo-nav-item.active {
+  color: #08b5ff;
+}
+
+
+/* Center Play */
+
+.ludo-play-nav {
+  position: relative;
+
+  width: 53px;
+  height: 53px;
+
+  margin: -17px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 2px solid #078cff;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      #0c58bb,
+      #041e4b
+    );
+
+  box-shadow:
+    0 0 17px rgba(0, 140, 255, .65);
+
+  color: white;
+}
+
+.ludo-play-nav div {
+  width: 33px;
+  height: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 17px;
+}
+
+.ludo-play-nav small {
+  position: absolute;
+
+  bottom: -17px;
+
+  font-size: 6px;
+}
+
+
+/* =========================================================
+   DESKTOP — MOBILE ONLY
+========================================================= */
+
+@media (min-width: 769px) {
+
+  .ludo-page::before {
+    display: none;
+  }
+
+  .ludo-page::after {
+    content: "Ludo is currently available on mobile only";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: #020a25;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    text-align: center;
+
+    z-index: 999;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .ludo-logo {
+    top: 7%;
+    width: 135px;
+  }
+
+  .ludo-title-section {
+    top: 20%;
+  }
+
+  .ludo-title-section h1 {
+    font-size: 19px;
+  }
+
+  .ludo-mode-grid {
+    top: 28%;
+    width: 90%;
+    gap: 6px;
+  }
+
+  .ludo-mode-card {
+    height: 120px;
+  }
+
+  .ludo-mode-art {
+    font-size: 45px;
+  }
+
+  .ludo-mode-content h2 {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 350px) {
+
+  .ludo-header {
+    width: 92%;
+  }
+
+  .ludo-logo {
+    width: 125px;
+  }
+
+  .ludo-title-section h1 {
+    font-size: 17px;
+  }
+
+  .ludo-mode-grid {
+    width: 91%;
+    gap: 5px;
+  }
+
+  .ludo-mode-card {
+    height: 112px;
+  }
+
+  .ludo-mode-content h2 {
+    font-size: 10px;
+  }
+
+  .ludo-mode-content p {
+    font-size: 5px;
+  }
+
+}
