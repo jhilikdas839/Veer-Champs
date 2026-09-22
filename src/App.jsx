@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import "./App.css";
-
 import GameViewport from "./component/GameViewport.jsx";
 
 import SplashScreen from "./component/SplashScreen.jsx";
@@ -19,89 +17,101 @@ function App() {
 
 
   return (
-    <GameViewport>
+    <div
+      className="
+        min-h-screen
+        w-full
+        overflow-hidden
+        bg-[#020b24]
+        text-white
+      "
+    >
 
-      {/* =====================================================
-          SPLASH SCREEN
-      ===================================================== */}
+      <GameViewport>
 
-      {screen === "splash" && (
-        <SplashScreen
-          onGetStarted={() => setScreen("auth")}
-        />
-      )}
+        {/* =====================================================
+            SPLASH SCREEN
+        ===================================================== */}
 
-
-      {/* =====================================================
-          AUTHENTICATION
-      ===================================================== */}
-
-      {screen === "auth" && (
-        <Authentication
-          onBack={() => setScreen("splash")}
-          onContinue={() => setScreen("otp")}
-        />
-      )}
+        {screen === "splash" && (
+          <SplashScreen
+            onGetStarted={() => setScreen("auth")}
+          />
+        )}
 
 
-      {/* =====================================================
-          OTP SCREEN
-      ===================================================== */}
+        {/* =====================================================
+            AUTHENTICATION
+        ===================================================== */}
 
-      {screen === "otp" && (
-        <OtpScreen
-          onBack={() => setScreen("auth")}
-          onContinue={() => setScreen("profile")}
-        />
-      )}
-
-
-      {/* =====================================================
-          PROFILE SCREEN
-      ===================================================== */}
-
-      {screen === "profile" && (
-        <Profile
-          onBack={() => setScreen("otp")}
-          onContinue={() => setScreen("done")}
-        />
-      )}
+        {screen === "auth" && (
+          <Authentication
+            onBack={() => setScreen("splash")}
+            onContinue={() => setScreen("otp")}
+          />
+        )}
 
 
-      {/* =====================================================
-          DONE SCREEN
-      ===================================================== */}
+        {/* =====================================================
+            OTP SCREEN
+        ===================================================== */}
 
-      {screen === "done" && (
-        <DoneScreen
-          onStartPlaying={() => setScreen("home")}
-        />
-      )}
-
-
-      {/* =====================================================
-          HOME SCREEN
-      ===================================================== */}
-
-      {screen === "home" && (
-  <HomeScreen
-    onProfile={() => setScreen("profile")}
-    onLudo={() => setScreen("ludo")}
-  />
-)}
+        {screen === "otp" && (
+          <OtpScreen
+            onBack={() => setScreen("auth")}
+            onContinue={() => setScreen("profile")}
+          />
+        )}
 
 
-      {/* =====================================================
-          LUDO SCREEN
-      ===================================================== */}
+        {/* =====================================================
+            PROFILE SCREEN
+        ===================================================== */}
 
-     {screen === "ludo" && (
-  <LudoScreen
-    onBack={() => setScreen("home")}
-  />
-)}
+        {screen === "profile" && (
+          <Profile
+            onBack={() => setScreen("otp")}
+            onContinue={() => setScreen("done")}
+          />
+        )}
 
-    </GameViewport>
+
+        {/* =====================================================
+            DONE SCREEN
+        ===================================================== */}
+
+        {screen === "done" && (
+          <DoneScreen
+            onStartPlaying={() => setScreen("home")}
+          />
+        )}
+
+
+        {/* =====================================================
+            HOME SCREEN
+        ===================================================== */}
+
+        {screen === "home" && (
+          <HomeScreen
+            onProfile={() => setScreen("profile")}
+            onLudo={() => setScreen("ludo")}
+          />
+        )}
+
+
+        {/* =====================================================
+            LUDO SCREEN
+        ===================================================== */}
+
+        {screen === "ludo" && (
+          <LudoScreen
+            onBack={() => setScreen("home")}
+          />
+        )}
+
+      </GameViewport>
+
+    </div>
   );
 }
 
